@@ -1,4 +1,4 @@
-# **[YaMDb](https://github.com/ArturioNe/api_yamdb.git).**
+# **[YaMDb](https://github.com/ArturioNe/api_yamdb.git)**
 
 ## **Описание проекта.**
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Titles). 
@@ -37,6 +37,10 @@ Service is not running: программа установлена, но демо
     + POSTGRES_PASSWORD=пароль для подключения к БД
     + DB_HOST=название сервиса (контейнера)
     + DB_PORT=порт для подключения к БД
+    + SECRET_KEY='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs' 
+    + DEBUG='False'
+    + ALLOWED_HOSTS=['*']
+    + ADMIN_EMAIL='gbgtwvkby@example.com'
 
 4. Для запуска docker-compose выполните команду:
 
@@ -62,12 +66,10 @@ Service is not running: программа установлена, но демо
 
 8. Заполните базу данных:
 
-``` docker-compose exec web python3 manage.py loaddata fixture.json ```
+``` docker-compose exec web python3 manage.py loaddata fixtures.json ```
    
 Теперь проект доступен по адресу http://127.0.0.1/. 
 При этом номер порта указывать уже не надо: умный nginx принимает запросы на стандартном порте 
 и перенаправляет их в приложение.
 Зайдите на http://127.0.0.1/admin/ и убедитесь, что страница отображается полностью: статика подгрузилась.
 Авторизуйтесь под аккаунтом суперпользователя и убедитесь, что миграции прошли успешно.
-
-
