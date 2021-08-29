@@ -1,16 +1,20 @@
 import os
 
 from datetime import timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 AUTH_USER_MODEL = "api.User"
 
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = False
+DEBUG = os.getenv('DEBUG_STATUS') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,9 +70,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -129,4 +130,4 @@ USER = 'user'
 MODERATOR = 'moderator'
 ADMIN = 'admin'
 ROLES = ((ADMIN, ADMIN), (MODERATOR, MODERATOR), (USER, USER))
-ADMIN_EMAIL = 'gbgtwvkby@example.com'
+ADMIN_EMAIL = os.getenv('ADMIN_EMAIL')
