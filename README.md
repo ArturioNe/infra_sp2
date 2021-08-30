@@ -29,20 +29,10 @@ Service is not running: программа установлена, но демо
 ``` git clone https://github.com/ArturioNe/infra_sp2.git```
 
 2. Перейдите в папку с репозиторием.
+   Обратите внимание на файл .env. В реальном проекте этот файл нужно спрятать от посторонних глаз, но у нас
+   проект учебный так что все в порядке.
 
-3. Создайте файл `.env` и внесите следующие записи:
-    + DB_ENGINE=указать базу данных с которой будете работать
-    + DB_NAME=имя базы данных
-    + POSTGRES_USER=логин для подключения к базе данных
-    + POSTGRES_PASSWORD=пароль для подключения к БД
-    + DB_HOST=название сервиса (контейнера)
-    + DB_PORT=порт для подключения к БД
-    + SECRET_KEY='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs' 
-    + DEBUG='False'
-    + ALLOWED_HOSTS=['*']
-    + ADMIN_EMAIL='gbgtwvkby@example.com'
-
-4. Для запуска docker-compose выполните команду:
+3. Для запуска docker-compose выполните команду:
 
 ``` docker-compose up -d --build ```
 
