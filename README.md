@@ -24,15 +24,25 @@ Service is not running: программа установлена, но демо
 
 ## Запуск приложения.
 
-1. Клонируйте репозиторий:
+1. Клонируйте репозиторий и откройте его в своей среде разработки:
 
 ``` git clone https://github.com/ArturioNe/infra_sp2.git```
 
-2. Перейдите в папку с репозиторием.
+2. Создайте виртуальное окружение проекта выполнив команду:
+
+``` python -m venv venv```
+
+3. Активируйте виртуальное окружение и установите пакеты из файла requirements.txt:
+
+``` venv\Scripts\activate ```
+   
+``` pip install -r requirements.txt ```
+
+4. Перейдите в папку с репозиторием.
    Обратите внимание на файл .env. В реальном проекте этот файл нужно спрятать от посторонних глаз, но у нас
    проект учебный так что все в порядке.
 
-3. Для запуска docker-compose выполните команду:
+5. Для запуска docker-compose выполните команду:
 
 ``` docker-compose up -d --build ```
 
@@ -40,21 +50,21 @@ Service is not running: программа установлена, но демо
 что контейнеры собраны и запущены:
 ![](https://pictures.s3.yandex.net/resources/S18_03_03_1619103276.png)
 
-5. Выполните миграции:
+6. Выполните миграции:
 
 ``` docker-compose exec web python manage.py migrate auth ```
 
 ``` docker-compose exec web python manage.py migrate --run-syncdb ```
 
-6. Установите статику проекта
+7. Установите статику проекта
 
 ``` docker-compose exec web python manage.py collectstatic --no-input  ```
 
-7. Создайте суперпользователя:
+8. Создайте суперпользователя:
 
 ``` docker-compose exec web python manage.py createsuperuser ```
 
-8. Заполните базу данных:
+9. Заполните базу данных:
 
 ``` docker-compose exec web python3 manage.py loaddata fixtures.json ```
    
