@@ -102,8 +102,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-#.env
-#.venv
+.env
+.venv
 env/
 venv/
 ENV/
@@ -146,6 +146,6 @@ dmypy.json
 .mypy_cache
 
 # папки со статикой и медиа
-static/
+#static/
 posts/static/
 
