@@ -60,13 +60,14 @@ Service is not running: программа установлена, но демо
 
 ``` docker-compose exec web python manage.py collectstatic --no-input  ```
 
-8. Создайте суперпользователя:
+8. Заполните базу данных:
+
+``` docker-compose exec web python3 manage.py loaddata fixtures.json ```
+
+9. Создайте суперпользователя:
 
 ``` docker-compose exec web python manage.py createsuperuser ```
 
-9. Заполните базу данных:
-
-``` docker-compose exec web python3 manage.py loaddata fixtures.json ```
    
 Теперь проект доступен по адресу http://127.0.0.1/. 
 При этом номер порта указывать уже не надо: умный nginx принимает запросы на стандартном порте 

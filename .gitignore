@@ -109,6 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.env
+.venv
 
 # Spyder project settings
 .spyderproject
@@ -148,4 +150,5 @@ dmypy.json
 # папки со статикой и медиа
 #static/
 posts/static/
+
 
