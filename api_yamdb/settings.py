@@ -17,15 +17,15 @@ DEBUG = os.getenv('DEBUG_STATUS')
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
+    'api',
+    'rest_framework',
+    'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'api',
-    'django_filters',
 ]
 
 MIDDLEWARE = [

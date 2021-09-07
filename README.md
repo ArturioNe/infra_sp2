@@ -52,9 +52,7 @@ Service is not running: программа установлена, но демо
 
 6. Выполните миграции:
 
-``` docker-compose exec web python manage.py migrate auth ```
-
-``` docker-compose exec web python manage.py migrate --run-syncdb ```
+``` docker-compose exec web python manage.py migrate --noinput ```
 
 7. Установите статику проекта
 
@@ -68,7 +66,6 @@ Service is not running: программа установлена, но демо
 
 ``` docker-compose exec web python manage.py createsuperuser ```
 
-   
 Теперь проект доступен по адресу http://127.0.0.1/. 
 При этом номер порта указывать уже не надо: умный nginx принимает запросы на стандартном порте 
 и перенаправляет их в приложение.
